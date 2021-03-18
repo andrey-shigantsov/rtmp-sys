@@ -169,6 +169,63 @@ impl ::std::default::Default for AMF3ClassDef {
         unsafe { ::std::mem::zeroed() }
     }
 }
+
+pub const RTMP_LIB_VERSION: i32 = 0x020300;	/* 2.3 */
+
+pub const RTMP_FEATURE_HTTP: i32 = 0x01;
+pub const RTMP_FEATURE_ENC: i32 = 0x02;
+pub const RTMP_FEATURE_SSL: i32 = 0x04;
+pub const RTMP_FEATURE_MFP: i32 = 0x08;	/* not yet supported */
+pub const RTMP_FEATURE_WRITE: i32 = 0x10;	/* publish, not play */
+pub const RTMP_FEATURE_HTTP2: i32 = 0x20;	/* server-side rtmpt */
+
+pub const RTMP_PROTOCOL_UNDEFINED: i32 = -1;
+pub const RTMP_PROTOCOL_RTMP: i32 = 0;
+pub const RTMP_PROTOCOL_RTMPE: i32 = RTMP_FEATURE_ENC;
+pub const RTMP_PROTOCOL_RTMPT: i32 = RTMP_FEATURE_HTTP;
+pub const RTMP_PROTOCOL_RTMPS: i32 = RTMP_FEATURE_SSL;
+pub const RTMP_PROTOCOL_RTMPTE: i32 = RTMP_FEATURE_HTTP|RTMP_FEATURE_ENC;
+pub const RTMP_PROTOCOL_RTMPTS: i32 = RTMP_FEATURE_HTTP|RTMP_FEATURE_SSL;
+pub const RTMP_PROTOCOL_RTMFP: i32 = RTMP_FEATURE_MFP;
+
+pub const RTMP_DEFAULT_CHUNKSIZE: i32 = 128;
+
+/* needs to fit largest number of bytes recv() may return */
+pub const RTMP_BUFFER_CACHE_SIZE: i32 = 16*1024;
+
+pub const RTMP_CHANNELS: i32 = 65600;
+
+/*      RTMP_PACKET_TYPE_...                0x00 */
+pub const RTMP_PACKET_TYPE_CHUNK_SIZE: i32 = 0x01;
+/*      RTMP_PACKET_TYPE_...                0x02 */
+pub const RTMP_PACKET_TYPE_BYTES_READ_REPORT: i32 = 0x03;
+pub const RTMP_PACKET_TYPE_CONTROL: i32 = 0x04;
+pub const RTMP_PACKET_TYPE_SERVER_BW: i32 = 0x05;
+pub const RTMP_PACKET_TYPE_CLIENT_BW: i32 = 0x06;
+/*      RTMP_PACKET_TYPE_...                0x07 */
+pub const RTMP_PACKET_TYPE_AUDIO: i32 = 0x08;
+pub const RTMP_PACKET_TYPE_VIDEO: i32 = 0x09;
+/*      RTMP_PACKET_TYPE_...                0x0A */
+/*      RTMP_PACKET_TYPE_...                0x0B */
+/*      RTMP_PACKET_TYPE_...                0x0C */
+/*      RTMP_PACKET_TYPE_...                0x0D */
+/*      RTMP_PACKET_TYPE_...                0x0E */
+pub const RTMP_PACKET_TYPE_FLEX_STREAM_SEND: i32 = 0x0F;
+pub const RTMP_PACKET_TYPE_FLEX_SHARED_OBJECT: i32 = 0x10;
+pub const RTMP_PACKET_TYPE_FLEX_MESSAGE: i32 = 0x11;
+pub const RTMP_PACKET_TYPE_INFO: i32 = 0x12;
+pub const RTMP_PACKET_TYPE_SHARED_OBJECT: i32 = 0x13;
+pub const RTMP_PACKET_TYPE_INVOKE: i32 = 0x14;
+/*      RTMP_PACKET_TYPE_...                0x15 */
+pub const RTMP_PACKET_TYPE_FLASH_VIDEO: i32 = 0x16;
+
+pub const RTMP_MAX_HEADER_SIZE: i32 = 18;
+
+pub const RTMP_PACKET_SIZE_LARGE: i32 = 0;
+pub const RTMP_PACKET_SIZE_MEDIUM: i32 = 1;
+pub const RTMP_PACKET_SIZE_SMALL: i32 = 2;
+pub const RTMP_PACKET_SIZE_MINIMUM: i32 = 3;
+
 #[repr(C)]
 #[derive(Copy, Clone)]
 #[derive(Debug)]

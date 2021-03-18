@@ -3,7 +3,8 @@
 #![allow(dead_code,
          non_camel_case_types,
          non_upper_case_globals,
-         non_snake_case)]
+         non_snake_case,
+         improper_ctypes)]
 pub type size_t = usize;
 pub type __u_char = ::std::os::raw::c_uchar;
 pub type __u_short = ::std::os::raw::c_ushort;

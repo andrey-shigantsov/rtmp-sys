@@ -1,6 +1,6 @@
 [package]
 name = "rtmp-sys"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Stargateur <antoine.plaskowski@epitech.eu>"]
 edition = "2018"
 description = "Bindings to the rtmp library."
